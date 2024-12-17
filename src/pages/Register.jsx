@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import Input from "../components/form/Input";
+const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -19,7 +20,7 @@ const Register = () => {
         is_old_customer: isOldCustomer,
       };
       console.log(payload);
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch(`${apiUrl}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

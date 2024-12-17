@@ -8,10 +8,11 @@ export const useApi = () => {
     async (url, options = {}) => {
       // options: 请求的其他选项，例如 method 和 body，默认为空对象 {}
       const headers = {
-        ...options.headers, // 合并原有的请求头（options.headers）和新的 Authorization 头部
+        ...options.headers,
         Authorization: `Bearer ${jwtToken}`,
       };
-      return fetch(url, { ...options, headers });
+      const baseUrl = import.meta.env.VITE_BACKEND_URL;
+      return fetch(`${baseUrl}${url}`, { ...options, headers });
     },
     [jwtToken]
   );
