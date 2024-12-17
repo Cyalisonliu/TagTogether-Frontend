@@ -2,16 +2,20 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dotenv from "dotenv";
 
+// Load environment variables from `.env` file
 dotenv.config();
+
+// Access the environment variable directly using `process.env`
+const backendUrl = process.env.VITE_BACKEND_URL;
 
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: process.env.BACKEND_URL, // 後端服務的實際地址
+        target: backendUrl,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""), // 去掉 `/api` 前綴 後端不用care
+        secure: false,
       },
     },
   },
