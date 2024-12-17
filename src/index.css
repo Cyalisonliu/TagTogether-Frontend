@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-size: cover; /* 背景圖像調整 */
+  background-position: center;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #121212; /* 深黑背景 */
+  display: flex;
+  flex-direction: column;
+  color: #e0e0e0; /* 調整全局字體顏色為淺灰 */
+  @apply text-white; /* Tailwind 輔助類 */
+}
+
+#root {
+  flex: 1; /* 確保根容器填滿父層空間 */
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: #826aed; /* 紫色 */
+  text-decoration: none;
+}
+a:hover {
+  color: #b39ddb; /* 淺紫色 */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #2d2d2d; /* 深灰色背景 */
+  color: #e0e0e0; /* 白色字體 */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+button:hover {
+  border-color: #826aed; /* 紫色邊框 */
+  background-color: #393939; /* 略淺灰色背景 */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #121212; /* 深灰色字體 */
+    background-color: #f4f4f4; /* 淺灰背景 */
+  }
+  input,
+  textarea {
+    background-color: #ffffff; /* 白色背景 */
+    color: #333; /* 深色字體 */
+    border-color: #ccc; /* 淺灰邊框 */
+  }
+  button {
+    background-color: #e0e0e0; /* 淺灰色背景 */
+    color: #121212; /* 深灰字體 */
+  }
+  button:hover {
+    background-color: #d0d0d0; /* 更淺的灰色 */
+  }
+}
+
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #f0fff4; /* 較亮的綠色字體 */
+  background-color: #276749; /* 深綠背景 */
+  border-color: #22543d; /* 深綠邊框 */
+}
+
+.alert-danger {
+  color: #fff5f5; /* 淺粉色字體 */
+  background-color: #742a2a; /* 深紅背景 */
+  border-color: #5a1e1e; /* 深紅邊框 */
+}
+
+input {
+  all: unset;
+  background-color: #1e1e1e; /* 深灰背景 */
+  color: #e0e0e0; /* 白色字體 */
+  padding: 10px;
+  border: 1px solid #333; /* 深灰邊框 */
+  border-radius: 5px;
+  width: 100%; /* 確保輸入框與容器寬度一致 */
+  box-sizing: border-box; /* 包括 padding 在內計算寬度 */
+  font-size: 1rem;
+}
+input:focus {
+  border-color: #826aed; /* 聚焦時的紫色邊框 */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130, 106, 237, 0.5); /* 添加輕微陰影 */
+}
+
+textarea {
+  all: unset;
+  background-color: #1e1e1e; /* 深灰背景 */
+  color: #e0e0e0; /* 白色字體 */
+  padding: 10px;
+  border: 1px solid #333; /* 深灰邊框 */
+  border-radius: 5px;
+  width: 100%;
+  height: 150px; /* 默認高度 */
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+textarea:focus {
+  border-color: #826aed; /* 聚焦時的紫色邊框 */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130, 106, 237, 0.5); /* 添加輕微陰影 */
+}
